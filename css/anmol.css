@@ -1,0 +1,587 @@
+:root {
+    --primary-color: #1a2a22; /* Zeer donkergroen - Professioneel en museum-achtig */
+    --accent-color: #c5a065; /* Goud/Beige - Klassiek en chique */
+    --bg-color: #fafafa; /* Heel lichtgrijs / bijna wit */
+    --text-color: #2b2b2b; /* Donkergrijs voor leesbaarheid */
+    --light-text: #ffffff;
+    --card-bg: #ffffff;
+    --font-heading: 'Playfair Display', serif; /* Elegante krant-achtige font */
+    --font-body: 'Lato', sans-serif; /* Strakke moderne font */
+    --spacing: 2rem;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.8;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Luxe Navbar */
+.navbar {
+    background-color: var(--primary-color);
+    padding: 1.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 3rem;
+}
+
+.nav-links a {
+    color: var(--light-text);
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a.active {
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+}
+
+
+/* Modern Hero Section */
+.hero {
+    background: linear-gradient(rgba(26, 42, 34, 0.4), rgba(26, 42, 34, 0.4)), url('../images/HoofdFoto.JPG');
+    background-color: var(--primary-color); /* Fallback */
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--light-text);
+    padding: 0 2rem;
+    margin-bottom: 4rem;
+}
+
+.hero-content {
+    max-width: 800px;
+    animation: fadeIn 1s ease-out;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    color: var(--light-text);
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+.hero-content p {
+    font-size: 1.4rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+/* Layout Container */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Secties met witruimte */
+section {
+    margin-bottom: 5rem;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 1.5rem;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+    margin: 1rem auto 0;
+}
+
+/* Tekstblokken */
+.intro-text p, .museum-history p, .reflection-section p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.content-box {
+    background: var(--card-bg);
+    padding: 3rem;
+    border-radius: 1px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+}
+
+/* Student Cards - Minimalistisch */
+.student-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.student-card {
+    background: var(--card-bg);
+    padding: 3rem 2rem;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+
+.student-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    border-bottom: 3px solid var(--accent-color);
+}
+
+.student-card h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    margin-top: 2rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Student Profile Page Specifics */
+.profile-header {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    padding: 6rem 0;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.profile-header-anmol {
+    background: linear-gradient(rgba(26, 42, 34, 0.6), rgba(26, 42, 34, 0.6)), url('../images/geweer.jpeg');
+    background-size: cover;
+    background-position: center;
+    padding: 8rem 0 !important;
+}
+
+.profile-header h1 {
+    color: var(--accent-color);
+    font-size: 3.5rem;
+}
+
+/* Reflection Section Tweaks */
+.reflection-section {
+    background: var(--card-bg);
+    padding: 3rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    border-left: 4px solid var(--accent-color);
+}
+
+.reflection-section h2 {
+    text-align: left;
+    font-size: 2rem;
+    border: none;
+    padding-bottom: 0.5rem;
+}
+
+.reflection-section h2::after {
+    margin: 1rem 0 0; /* Left align underline */
+}
+
+.reflection-section h3 {
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Gallery Styles */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-item:hover {
+    transform: scale(1.02);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-item .caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(26, 42, 34, 0.8); /* Primary color with transparency */
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .caption {
+    opacity: 1;
+}
+
+/* Kerim Specific Styles */
+.hero-kerim {
+    background: linear-gradient(rgba(26, 42, 34, 0.55), rgba(26, 42, 34, 0.55)), url('../images/HeaderBackgroundKerim.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+    color: var(--light-text);
+    text-align: center;
+}
+
+.hero-kerim .hero-content h1 {
+    font-size: 3.8rem;
+    color: var(--light-text);
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    animation: fadeIn 1.2s ease-out;
+}
+
+.hero-kerim .hero-content p {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: fadeIn 1.6s ease-out;
+}
+
+/* Drop cap on opening paragraph */
+.drop-cap::first-letter {
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    float: left;
+    line-height: 0.8;
+    margin: 0.1rem 0.6rem 0 0;
+}
+
+/* Pull quote */
+.kerim-pullquote {
+    border-left: none;
+    margin: 2.5rem 0;
+    padding: 1.5rem 2.5rem;
+    background: var(--primary-color);
+    color: var(--accent-color);
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-style: italic;
+    text-align: center;
+    position: relative;
+}
+
+.kerim-pullquote::before {
+    content: '\201C';
+    font-size: 5rem;
+    line-height: 0;
+    position: absolute;
+    top: 2.2rem;
+    left: 1.2rem;
+    color: rgba(197, 160, 101, 0.25);
+    font-family: var(--font-heading);
+}
+
+/* Photo frame */
+.kerim-photo-frame {
+    margin: 1.5rem auto 0;
+    max-width: 680px;
+    text-align: center;
+}
+
+.kerim-photo-frame img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 5px solid var(--accent-color);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+}
+
+.kerim-photo-frame figcaption {
+    margin-top: 0.8rem;
+    font-size: 0.9rem;
+    color: #888;
+    letter-spacing: 0.5px;
+    font-style: italic;
+}
+
+/* Fade-in animation on scroll (CSS only fallback) */
+.kerim-fade {
+    animation: fadeIn 0.8s ease-out both;
+}
+
+/* Erhan Specific Styles */
+.hero-erhan {
+    background: linear-gradient(rgba(26, 42, 34, 0.4), rgba(26, 42, 34, 0.4)), url('../images/erhan-bg.JPG'); 
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+    color: var(--light-text);
+}
+
+/* Footer stringently */
+footer {
+    background-color: var(--primary-color);
+    color: rgba(255,255,255,0.6);
+    padding: 3rem 2rem;
+    margin-top: 6rem;
+    font-size: 0.9rem;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.footer-logos {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.footer-logo {
+    height: 50px;
+    width: auto;
+    max-width: 150px;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+    background-color: rgba(255, 255, 255, 0.9); /* Subtle background for better logo visibility */
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.footer-logo:hover {
+    opacity: 1;
+}
+
+/* Mobile footer tweak */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Animatie */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Image Styles */
+.reflection-figure {
+    margin: 3rem auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reflection-figure img {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reflection-figure img:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.2);
+}
+
+.reflection-figure figcaption {
+    margin-top: 1.2rem;
+    font-size: 0.95rem;
+    color: #777;
+    font-style: italic;
+    line-height: 1.6;
+    max-width: 700px;
+}
+
+.reflection-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin: 3rem 0;
+    justify-items: center;
+}
+
+.reflection-gallery .reflection-figure {
+    margin: 0;
+    width: 100%;
+}
+
+/* Mobile Tweaks */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--light-text);
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        text-align: center;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding-top: 1rem;
+        position: absolute;
+        top: 70px; /* Adjust based on navbar height */
+        left: 0;
+        background-color: var(--primary-color);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .navbar .container {
+        flex-wrap: wrap;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .student-grid {
+        grid-template-columns: 1fr;
+    }
+}
