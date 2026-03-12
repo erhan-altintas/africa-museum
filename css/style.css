@@ -350,9 +350,45 @@ footer {
 }
 
 /* Mobile Tweaks */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--light-text);
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
 @media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
     .nav-links {
-        display: none; /* Add JS for hamburger later if needed */
+        display: none;
+        width: 100%;
+        text-align: center;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding-top: 1rem;
+        position: absolute;
+        top: 70px; /* Adjust based on navbar height */
+        left: 0;
+        background-color: var(--primary-color);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .navbar .container {
+        flex-wrap: wrap;
     }
     
     .hero-content h1 {
