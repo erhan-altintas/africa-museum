@@ -1,12 +1,13 @@
 :root {
-    --primary-color: #8B4513; /* SaddleBrown */
-    --secondary-color: #CD853F; /* Peru */
-    --accent-color: #DAA520; /* GoldenRod */
-    --bg-color: #FAF9F6; /* Off-white / Eggshell */
-    --text-color: #333;
-    --light-text: #fff;
-    --font-heading: 'Merriweather', serif;
-    --font-body: 'Open Sans', sans-serif;
+    --primary-color: #1a2a22; /* Zeer donkergroen - Professioneel en museum-achtig */
+    --accent-color: #c5a065; /* Goud/Beige - Klassiek en chique */
+    --bg-color: #fafafa; /* Heel lichtgrijs / bijna wit */
+    --text-color: #2b2b2b; /* Donkergrijs voor leesbaarheid */
+    --light-text: #ffffff;
+    --card-bg: #ffffff;
+    --font-heading: 'Playfair Display', serif; /* Elegante krant-achtige font */
+    --font-body: 'Lato', sans-serif; /* Strakke moderne font */
+    --spacing: 2rem;
 }
 
 * {
@@ -19,34 +20,34 @@ body {
     font-family: var(--font-body);
     background-color: var(--bg-color);
     color: var(--text-color);
-    line-height: 1.6;
+    line-height: 1.8;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4 {
     font-family: var(--font-heading);
     color: var(--primary-color);
     margin-bottom: 1rem;
+    font-weight: 700;
 }
 
 a {
     text-decoration: none;
     color: inherit;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 ul {
     list-style: none;
 }
 
-/* Navbar */
+/* Luxe Navbar */
 .navbar {
     background-color: var(--primary-color);
-    color: var(--light-text);
-    padding: 1rem 2rem;
+    padding: 1.5rem 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 .navbar .container {
@@ -55,151 +56,253 @@ ul {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 2rem;
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: bold;
-    font-family: var(--font-heading);
+    color: var(--accent-color);
+    letter-spacing: 1px;
 }
 
 .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 3rem;
+}
+
+.nav-links a {
+    color: var(--light-text);
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
 }
 
 .nav-links a:hover {
     color: var(--accent-color);
 }
 
-/* Hero Section */
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a.active {
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+}
+
+
+/* Modern Hero Section */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/museum-bg.jpg'); /* Placeholder for image */
-    background-color: #555; /* Fallback */
+    background: linear-gradient(rgba(26, 42, 34, 0.4), rgba(26, 42, 34, 0.4)), url('../HoofdFoto.JPG');
+    background-color: var(--primary-color); /* Fallback */
     background-size: cover;
     background-position: center;
-    height: 60vh;
+    height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: var(--light-text);
-    padding: 0 1rem;
+    padding: 0 2rem;
+    margin-bottom: 4rem;
+}
+
+.hero-content {
+    max-width: 800px;
+    animation: fadeIn 1s ease-out;
 }
 
 .hero-content h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: 4rem;
     color: var(--light-text);
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
 }
 
 .hero-content p {
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    font-size: 1.4rem;
+    font-weight: 300;
+    opacity: 0.9;
 }
 
-/* Container */
+/* Layout Container */
 .container {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 0 2rem;
 }
 
-/* Sections */
+/* Secties met witruimte */
 section {
+    margin-bottom: 5rem;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 1.5rem;
     margin-bottom: 3rem;
+    color: var(--primary-color);
 }
 
-.intro-text, .museum-history {
-    background: #fff;
-    padding: 2rem;
-    border-radius: 8px; /* Slightly rounded corners */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    border-left: 5px solid var(--secondary-color);
+section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+    margin: 1rem auto 0;
 }
 
-/* Cards for Students */
+/* Tekstblokken */
+.intro-text p, .museum-history p, .reflection-section p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.content-box {
+    background: var(--card-bg);
+    padding: 3rem;
+    border-radius: 1px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+}
+
+/* Student Cards - Minimalistisch */
 .student-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
 }
 
 .student-card {
-    background: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    background: var(--card-bg);
+    padding: 3rem 2rem;
     text-align: center;
-    padding: 2rem;
-    border-top: 5px solid var(--primary-color);
+    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
 }
 
 .student-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    border-bottom: 3px solid var(--accent-color);
 }
 
 .student-card h3 {
-    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
 .btn {
     display: inline-block;
-    padding: 0.5rem 1.5rem;
-    background-color: var(--secondary-color);
+    padding: 1rem 2.5rem;
+    background-color: var(--primary-color);
     color: var(--light-text);
-    border-radius: 4px;
-    margin-top: 1rem;
-    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    margin-top: 2rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .btn:hover {
-    background-color: var(--primary-color);
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    font-weight: bold;
 }
 
-/* Student Page Layout */
+/* Student Profile Page Specifics */
 .profile-header {
     background-color: var(--primary-color);
     color: var(--light-text);
-    padding: 3rem 0;
+    padding: 6rem 0;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
 }
 
+.profile-header h1 {
+    color: var(--accent-color);
+    font-size: 3.5rem;
+}
+
+/* Reflection Section Tweaks */
 .reflection-section {
-    background: #fff;
-    padding: 2rem;
-    margin-bottom: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    background: var(--card-bg);
+    padding: 3rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    border-left: 4px solid var(--accent-color);
 }
 
 .reflection-section h2 {
-    border-bottom: 2px solid var(--accent-color);
+    text-align: left;
+    font-size: 2rem;
+    border: none;
     padding-bottom: 0.5rem;
-    display: inline-block;
 }
 
-/* Footer */
+.reflection-section h2::after {
+    margin: 1rem 0 0; /* Left align underline */
+}
+
+.reflection-section h3 {
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Footer stringently */
 footer {
-    background-color: #222;
-    color: #ccc;
+    background-color: var(--primary-color);
+    color: rgba(255,255,255,0.6);
     text-align: center;
-    padding: 2rem;
-    margin-top: 4rem;
+    padding: 4rem 2rem;
+    margin-top: 6rem;
+    font-size: 0.9rem;
 }
 
-/* Responsive */
+/* Animatie */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile Tweaks */
 @media (max-width: 768px) {
     .nav-links {
-        display: none; /* simple mobile hide for now, could be burger menu */
+        display: none; /* Add JS for hamburger later if needed */
     }
+    
     .hero-content h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
+    }
+    
+    .student-grid {
+        grid-template-columns: 1fr;
     }
 }
