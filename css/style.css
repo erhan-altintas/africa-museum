@@ -107,7 +107,7 @@ ul {
 
 /* Modern Hero Section */
 .hero {
-    background: linear-gradient(rgba(26, 42, 34, 0.4), rgba(26, 42, 34, 0.4)), url('../HoofdFoto.JPG');
+    background: linear-gradient(rgba(26, 42, 34, 0.4), rgba(26, 42, 34, 0.4)), url('../images/HoofdFoto.JPG');
     background-color: var(--primary-color); /* Fallback */
     background-size: cover;
     background-position: center;
@@ -274,6 +274,63 @@ section h2::after {
     margin-bottom: 0.5rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+/* Gallery Styles */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-item:hover {
+    transform: scale(1.02);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-item .caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(26, 42, 34, 0.8); /* Primary color with transparency */
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .caption {
+    opacity: 1;
+}
+
+/* Erhan Specific Styles */
+.hero-erhan {
+    background: linear-gradient(rgba(26, 42, 34, 0.4), rgba(26, 42, 34, 0.4)), url('../images/erhan-bg.JPG'); 
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+    color: var(--light-text);
 }
 
 /* Footer stringently */
