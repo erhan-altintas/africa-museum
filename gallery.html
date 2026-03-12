@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery - Africa Museum</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">AfricaMuseum Reflections</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="erhan.html">Erhan</a></li>
+                <li><a href="anmoldeep.html">Anmoldeep</a></li>
+                <li><a href="kerim.html">Kerim</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Photo Gallery</h1>
+            <p>Highlights from our visit to the Royal Museum for Central Africa</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        
+        <section class="gallery-intro">
+            <h2>Our Impressions</h2>
+            <p>Below are photos taken during our cultural trip to the museum. These images capture the exhibits, the architecture, and our group as we explored the history.</p>
+        </section>
+
+        <!-- Gallery Grid -->
+        <section class="photo-gallery">
+            <div class="gallery-grid">
+                <!-- Example Photo 1 -->
+                <div class="gallery-item">
+                    <img src="images/photo1.jpg" alt="Museum Exhibit" onclick="openModal(this)">
+                    <div class="caption">Museum Exhibit</div>
+                </div>
+                <!-- Example Photo 2 -->
+                <div class="gallery-item">
+                    <img src="images/photo2.jpg" alt="Group Photo" onclick="openModal(this)">
+                    <div class="caption">Group Photo</div>
+                </div>
+                <!-- Example Photo 3 -->
+                <div class="gallery-item">
+                    <img src="images/photo3.jpg" alt="Another Exhibit" onclick="openModal(this)">
+                    <div class="caption">Another Exhibit</div>
+                </div>
+                <!-- Add more photos here by copying the div with class="gallery-item" -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 AfricaMuseum Project</p>
+    </footer>
+
+    <!-- Optional: Simple Lightbox Modal logic could be added here if needed -->
+    <script>
+        // Simple script if you want click-to-enlarge functionality later
+        function openModal(img) {
+            // Placeholder for future functionality
+            console.log("Image clicked:", img.src);
+        }
+    </script>
+</body>
+</html>
