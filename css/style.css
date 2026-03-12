@@ -320,6 +320,101 @@ section h2::after {
     opacity: 1;
 }
 
+/* Kerim Specific Styles */
+.hero-kerim {
+    background: linear-gradient(rgba(26, 42, 34, 0.55), rgba(26, 42, 34, 0.55)), url('../images/HeaderBackgroundKerim.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+    color: var(--light-text);
+    text-align: center;
+}
+
+.hero-kerim .hero-content h1 {
+    font-size: 3.8rem;
+    color: var(--light-text);
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    animation: fadeIn 1.2s ease-out;
+}
+
+.hero-kerim .hero-content p {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: fadeIn 1.6s ease-out;
+}
+
+/* Drop cap on opening paragraph */
+.drop-cap::first-letter {
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    float: left;
+    line-height: 0.8;
+    margin: 0.1rem 0.6rem 0 0;
+}
+
+/* Pull quote */
+.kerim-pullquote {
+    border-left: none;
+    margin: 2.5rem 0;
+    padding: 1.5rem 2.5rem;
+    background: var(--primary-color);
+    color: var(--accent-color);
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-style: italic;
+    text-align: center;
+    position: relative;
+}
+
+.kerim-pullquote::before {
+    content: '\201C';
+    font-size: 5rem;
+    line-height: 0;
+    position: absolute;
+    top: 2.2rem;
+    left: 1.2rem;
+    color: rgba(197, 160, 101, 0.25);
+    font-family: var(--font-heading);
+}
+
+/* Photo frame */
+.kerim-photo-frame {
+    margin: 1.5rem auto 0;
+    max-width: 680px;
+    text-align: center;
+}
+
+.kerim-photo-frame img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 5px solid var(--accent-color);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+}
+
+.kerim-photo-frame figcaption {
+    margin-top: 0.8rem;
+    font-size: 0.9rem;
+    color: #888;
+    letter-spacing: 0.5px;
+    font-style: italic;
+}
+
+/* Fade-in animation on scroll (CSS only fallback) */
+.kerim-fade {
+    animation: fadeIn 0.8s ease-out both;
+}
+
 /* Erhan Specific Styles */
 .hero-erhan {
     background: linear-gradient(rgba(26, 42, 34, 0.4), rgba(26, 42, 34, 0.4)), url('../images/erhan-bg.JPG'); 
