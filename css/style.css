@@ -432,10 +432,48 @@ section h2::after {
 footer {
     background-color: var(--primary-color);
     color: rgba(255,255,255,0.6);
-    text-align: center;
-    padding: 4rem 2rem;
+    padding: 3rem 2rem;
     margin-top: 6rem;
     font-size: 0.9rem;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.footer-logos {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.footer-logo {
+    height: 50px;
+    width: auto;
+    max-width: 150px;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+    background-color: rgba(255, 255, 255, 0.9); /* Subtle background for better logo visibility */
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.footer-logo:hover {
+    opacity: 1;
+}
+
+/* Mobile footer tweak */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
 }
 
 /* Animatie */
